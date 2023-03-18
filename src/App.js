@@ -21,7 +21,7 @@ function App() {
         itemInside.id === book.id
           ? {
               ...itemInside,
-              quantity: +quantity, // "+" same meaning as parseInt(quantity) or parseFloat(quantity)
+              quantity: +quantity, // "+" same meaning! as parseInt(quantity) or parseFloat(quantity)
             }
           : itemInside
       )
