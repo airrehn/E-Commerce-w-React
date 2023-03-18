@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
@@ -13,8 +12,30 @@
   min-height: 100vh;
 }
 
-ul {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+nav {
+  height: 80px;
   display: flex;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: white;
+  position: relative;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+p {
+  line-height: 1.5;
 }
 
 a {
@@ -25,22 +46,14 @@ a:hover {
   text-decoration: underline;
 }
 
-li {
-  list-style: none;
-}
 
-img {
-  height: 100%;
-  width: 100%;
-}
 
-nav {
-  height: 80px;
+ul {
   display: flex;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05);
-  background-color: white;
-  position: relative;
-  /* the menubackdrop will be positioned absolute to this. */
+}
+
+li {
+  list-style-type: none;
 }
 
 h1 {
@@ -64,6 +77,23 @@ button:active {
   transform: translateY(1px);
 }
 
+.btn {
+  background-color: #7342d6;
+  color: white;
+  padding: 12px 24px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: none;
+}
+
+.purple {
+  color: #7342d6;
+}
+
+.logo {
+  width: 160px;
+}
+
 .nav__container {
   width: 100%;
   max-width: 1200px;
@@ -74,8 +104,12 @@ button:active {
   margin: 0 auto;
 }
 
-.logo {
-  width: 160px;
+.nav__link {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px;
+  color: #7342d6;
 }
 
 .nav__list {
@@ -85,12 +119,8 @@ button:active {
   justify-content: center;
 }
 
-.nav__link {
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px;
-  font-size: 20px;
-  color: #7342d6;
+.nav__link:hover {
+  text-decoration: underline;
 }
 
 .nav__link--primary {
@@ -106,10 +136,9 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* color: #7342d6;
-    font-size: 20px; */
+  color: #7342d6;
+  font-size: 20px;
   position: relative;
-  /* the "cart__length" inside is gonna be positioned absolute (and relative to this)*/
   margin-left: 8px;
 }
 
@@ -135,7 +164,6 @@ button:active {
   border: none;
   color: #7342d6;
   display: none;
-  /* hide it until later */
 }
 
 .menu__backdrop {
@@ -150,10 +178,9 @@ button:active {
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  transition: all 300ms ease;
   opacity: 0;
   transform: translate(100%);
-  /* first position 100% (right, -100% would be left) of itself, i.e. out of the screen */
-  transition: all 300ms ease;
 }
 
 .menu--open {
@@ -165,7 +192,6 @@ button:active {
   visibility: visible;
   opacity: 1;
   transform: translate(0);
-  /* now remvove that positioning, i.e. bring it back to org place */
 }
 
 .menu__links {
@@ -191,24 +217,29 @@ button:active {
   color: white;
 }
 
-/* LANDING PAGE */
+
+/* 
+
+LANDING
+
+*/
 
 #landing {
-  background-color: rgba(115, 66, 214, 0.1);
+  background-color: rgba(115, 66, 214, 0.1)
 }
 
 header {
-  height: calc(100vh - 80px); /*80px is height of nav bar*/
+  height: calc(100vh - 80px);
 }
 
 .header__container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 100%;
-  height: 100%;
-  max-width: 720px;
-  margin: 0 auto;
 }
 
 .header__description {
@@ -217,34 +248,55 @@ header {
   align-items: center;
 }
 
-.purple {
-  color: #7342d6;
-}
-
-.btn {
-  background-color: #7342d6;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-size: 20px;
-  border: none;
-}
-
 .header__img--wrapper {
   padding: 20px;
-  z-index: 50; /*brings it over the "wave" shape on larger screens*/
-  max-height: 50vh; /*fir responsiveness on laptops*/
+
+  /* Added this after the tutorial to 
+  show it over the wave on larger screens */
+  z-index: 50;
+  
+  /* Added this after the tutorial to 
+  make landing page responsive on laptops */
+  max-height: 50vh;
 }
 
-/*HIGHLIGHTS SECTION*/
+.container {
+  padding: 56px 0;
+}
+
+.books__container {
+  padding: 24px 0;
+}
+
+.row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.row__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-cursor {
+  cursor: not-allowed;
+}
+/* 
+
+HIGHLIGHTS 
+
+*/
 
 #highlights {
   position: relative;
   max-width: 100vw;
 }
 
-#highlights::after,
-#highlights::before {
+#highlights:after,
+#highlights:before {
   background: url("./assets/wave.svg");
   content: "";
   position: absolute;
@@ -256,25 +308,14 @@ header {
   background-repeat: no-repeat;
 }
 
-#highlights::before {
+#highlights:before {
   transform: translateY(-100%);
   top: 1px;
 }
 
-#highlights::after {
+#highlights:after {
   transform: translateY(100%) rotate(180deg);
   bottom: 1px;
-}
-
-.container {
-  padding: 56px 0;
-}
-
-.row {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
 }
 
 .highlight__wrapper {
@@ -286,26 +327,8 @@ header {
   padding: 0 24px;
   width: calc(100% / 3);
   display: flex;
+  align-items: center;
   flex-direction: column;
-  align-items: center;
-}
-
-.highlight__img {
-  border: 2px solid #7342d65d;
-  color: #7342d6;
-  width: 100px;
-  height: 100px;
-  font-size: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.highlight__subtitle {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 16px;
 }
 
 .highlight__para {
@@ -313,7 +336,30 @@ header {
   max-width: 280px;
 }
 
-/* FEATURES */
+.highlight__img {
+  border: 2px solid #7342d65d;
+  color: #7342d6;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.highlight__subtitle {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* 
+
+FEATURES 
+
+*/
 
 #features {
   padding-top: 8vw;
@@ -329,14 +375,11 @@ header {
 .book {
   width: 25%;
   padding: 24px;
-  transition: all 300ms;
+  transition: all 300ms ease;
 }
 
-.book__img--wrapper {
-  margin-bottom: 8px;
-  border-radius: 4px;
-  overflow: hidden;
-  display: flex;
+.book:hover {
+  transform: translateY(-4px);
 }
 
 .book__img {
@@ -345,8 +388,43 @@ header {
   transition: all 300ms ease;
 }
 
-.book:hover {
-  transform: translateY(-4px);
+.book__img--skeleton {
+  width: 100%;
+  max-width: 250px;
+  height: 320px;
+  background-color: rgb(204, 204, 204);
+  margin-bottom: 8px;
+}
+
+.skeleton {
+  background-color: rgb(227, 227, 227) !important;
+  margin-bottom: 8px;
+}
+
+.book__title--skeleton {
+  height: 21px;
+  width: 100%;
+}
+
+.book__rating--skeleton {
+  width: 100px;
+  height: 19px;
+}
+
+.book__price--skeleton {
+  width : 200px;
+  height: 19px;
+}
+
+.book__link {
+  color: #242424;
+}
+
+.book__img--wrapper {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
 }
 
 .book__title {
@@ -369,19 +447,21 @@ header {
   color: #bfbfbf;
 }
 
-/* EXPLORE */
+/* 
+
+EXPLORE
+
+*/
 
 #explore {
   background-color: rgba(115, 66, 214, 0.1);
 }
 
-.row__column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* 
 
-/* FOOTER */
+FOOTER
+
+*/
 
 footer {
   background-color: #242424;
@@ -396,40 +476,37 @@ footer {
   filter: grayscale(1) invert(1);
 }
 
-.footer__list {
-  margin: 20px 0 24px 0;
-}
-
 .footer__link,
 .footer__copyright {
   color: #fff;
+}
+
+.footer__list {
+  margin: 20px 0 24px 0;
 }
 
 .footer__link {
   padding: 0 8px;
 }
 
-.no-cursor {
-  cursor: not-allowed;
-}
+/* 
+**
 
-/* Books page */
+BOOKS PAGE
+
+**
+*/
 
 #books__body {
   background-color: rgba(115, 66, 214, 0.1);
   flex: 1;
-  /* means i take all remaining space on the page, other elements that alr exist will just take their regular space */
   display: flex;
   flex-direction: column;
 }
 
 #books__main {
   flex: 1;
-  background-color: rgb(248, 249, 250);
-}
-
-.books__container {
-  padding: 24px 0;
+  background-color: rgb(248,249,250);
 }
 
 .books__header {
@@ -456,25 +533,42 @@ select {
   max-width: 200px;
 }
 
-
-/* BOOK URL*/
-
-.book__selected--top {
-  padding: 0 24px;
-  margin-bottom: 8px;
-  font-size: 32px;
-  color: #242424;
+.books__loading {
+  width: 100%;
   display: flex;
-  align-items:center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 60px;
+  color: #7342d6;
 }
 
-.book__selected--title--top {
-  margin-left: 10px;
-  margin-bottom: 0;
+.fa-spinner {
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 
+
+  book/:id
+    
+*/
+
+.container__book--selected {
+  padding-top: 16px;
 }
 
 .book__selected {
-  display:flex;
+  display: flex;
 }
 
 .book__selected--figure {
@@ -499,22 +593,34 @@ select {
   align-items: flex-start;
 }
 
+.book__selected--top {
+  padding: 0 24px;
+  margin-bottom: 8px;
+  font-size: 32px;
+  color: #242424;
+  display: flex;
+  align-items: center;
+}
 
-.book__link {
+.book__selected--link {
   color: #242424;
 }
 
-.book__selected--title {
-  margin-bottom: 8px;
+.fa-arrow-left {
+  font-size: 30px;
 }
 
-.book__selected--price {
-  font-size: 16px;
-  margin: 8px 0 24px 0;
+.book__selected--title--top {
+  margin-left: 10px;
+  margin-bottom: 0;
 }
 
 .book__summary {
   margin-bottom: 16px;
+}
+
+.book__selected--title {
+  margin-bottom: 8px
 }
 
 .book__summary--title {
@@ -525,7 +631,21 @@ select {
   margin-bottom: 16px;
 }
 
-/* CART */
+.book__price {
+  font-size: 16px;
+  margin: 8px 0 24px 0;
+}
+
+.link__breadcrumbs {
+  color: #bfbfbf;
+  margin-bottom: 16px;
+}
+
+/* 
+
+  CART 
+    
+*/
 
 .cart__title {
   margin-bottom: 16px;
@@ -540,6 +660,13 @@ select {
   display: flex;
 }
 
+.cart__item {
+  margin: 24px;
+  display: flex;
+  padding-right: 8px;
+}
+
+
 .cart__book {
   width: 60%;
   display: flex;
@@ -551,7 +678,7 @@ select {
   align-items: center;
 }
 
-.cart__price {
+.cart__total {
   width: 100%;
   max-width: 100px;
   display: flex;
@@ -560,10 +687,9 @@ select {
   font-size: 18px;
 }
 
-.cart__item {
-  margin: 24px;
-  padding-right: 8px;
-  display: flex;
+.cart__input {
+  padding: 8px;
+  width: 60px;
 }
 
 .cart__book--img {
@@ -571,6 +697,7 @@ select {
   max-width: 90px;
   max-height: 128px;
 }
+
 
 .cart__book--info {
   display: flex;
@@ -588,11 +715,6 @@ select {
   margin-bottom: 16px;
 }
 
-.cart__input{
-  padding: 8px;
-  width: 60px;
-}
-
 .cart__book--remove {
   background-color: transparent;
   color: #cf0000;
@@ -605,36 +727,28 @@ select {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-left: auto;
   padding: 0 24px;
   width: 100%;
   max-width: 300px;
+  margin-left: auto;
   font-size: 16px;
 }
 
 .total__item {
+  font-size: 18px;
+  margin-bottom: 24px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
-  margin-bottom: 24px;
 }
 
-
-.total__subtotal {
-  margin-top:24px ;
+.total__sub-total {
   border-top: 2px solid #7342d6;
   padding-top: 24px;
 }
 
 .total__price {
   font-weight: bold;
-}
-
-.btn__checkout {
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 0;
 }
 
 .cart__empty {
@@ -649,43 +763,13 @@ select {
   max-width: 400px;
 }
 
-/* SKELETON LOADING STATE */
-
-
-.skeleton {
-  background-color: rgb(204, 204, 204);
-  margin-bottom: 8px;
-}
-
-.book__img--skeleton {
+.btn__checkout {
   width: 100%;
-  max-width: 250px;
-  height: 320px;
-
+  font-size: 16px;
+  padding: 12px 0;
 }
 
-.book__title--skeleton {
-  height: 21px;
-  width: 100%;
-  max-width: 250px;
-}
-
-.book__rating--skeleton {
-  width: 100px;
-  height: 19px;
-}
-
-.book__price--skeleton {
-  width: 200px;
-  height: 19px;
-
-}
-
-
-
-/* ADDING RESPONSIVENESS */
-
-/* tablets */
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
 @media (max-width: 768px) {
   .header__description {
     padding: 0 24px;
@@ -706,9 +790,21 @@ select {
   .book {
     width: 50%;
   }
+
+  .book__selected {
+    flex-direction: column;
+  }
+  .book__selected--figure {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .book__selected--description {
+    width: 100%;
+  }
 }
 
-/* small phones */
+
+/* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
   .btn__menu {
     display: block;
@@ -724,5 +820,12 @@ select {
 
   .highlight:not(:last-child) {
     margin-bottom: 24px;
+  }
+
+  .cart__book--img {
+    display: none;
+  }
+  .cart__book--info {
+    padding-left: 0;
   }
 }
