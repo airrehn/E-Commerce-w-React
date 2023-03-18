@@ -706,6 +706,19 @@ select {
   .book {
     width: 50%;
   }
+
+  .book__selected {
+    flex-direction: column;
+  }
+
+  .book__selected--figure {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .book__selected--description {
+    width: 100%;
+  }
 }
 
 /* small phones */
@@ -724,5 +737,13 @@ select {
 
   .highlight:not(:last-child) {
     margin-bottom: 24px;
+  }
+
+  .cart__book--img {
+    display: none;
+  }
+
+  .cart__book--info {
+    padding-left: 0;
   }
 }
