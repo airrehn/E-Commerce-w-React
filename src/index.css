@@ -198,7 +198,10 @@ button:active {
 }
 
 header {
-  height: calc(100vh - 80px); /*80px is height of nav bar*/
+    
+  height: calc(100vh - 80px);
+  /* height: 100%  */
+  /* 80px is height of nav bar */
 }
 
 .header__container {
@@ -685,6 +688,12 @@ select {
 
 /* ADDING RESPONSIVENESS */
 
+@media (max-height: 700px) {
+  header {
+    height: 100vh;
+  }
+}
+
 /* tablets */
 @media (max-width: 768px) {
   .header__description {
@@ -723,6 +732,10 @@ select {
 
 /* small phones */
 @media (max-width: 550px) {
+
+  /* header {
+    height: 100%;
+  } */
   .btn__menu {
     display: block;
   }
