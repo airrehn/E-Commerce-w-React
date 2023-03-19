@@ -689,10 +689,11 @@ select {
 /* ADDING RESPONSIVENESS */
 
 @media (max-height: 700px) {
-  header {
+  .header__container {
     height: 100vh;
   }
 }
+
 
 /* tablets */
 @media (max-width: 768px) {
